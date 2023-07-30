@@ -6,6 +6,6 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: ./.github/actions/
+      - uses: ./.github/actions/test.yml
         with:
           QASE_TOKEN: ${{secrets.QASE_TOKEN}}
