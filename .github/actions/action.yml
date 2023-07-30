@@ -25,7 +25,6 @@ runs:
         HEADLESS_MODE: "true"
       shell: bash
     - name: Upload test results
-      if: failure()
       uses: actions/upload-artifact@v3
       with:
         name: playwright-report
