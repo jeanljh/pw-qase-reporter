@@ -30,8 +30,10 @@ runs:
         name: playwright-report
         path: playwright-report
         retention-days: 30    
+    - name: Show directory
+      run: pwd & ls
     - name: Deploy to github pages
-      uses: peaceiris/actions-gh-pages@v3
+      uses: JamesIves/github-pages-deploy-action@v4
       with:
-        github_token: ${{inputs.GITHUB_TOKEN}}
-        publish_dir: playwright-report
+        branch: gh-pages
+        folder: playwright-report

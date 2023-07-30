@@ -9,4 +9,3 @@ jobs:
       - uses: ./.github/actions/
         with:
           QASE_TOKEN: ${{secrets.QASE_TOKEN}}
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
