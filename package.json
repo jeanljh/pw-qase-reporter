@@ -1,0 +1,19 @@
+{
+  "name": "pw-qase-reporter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "report": "playwright show-report"
+  },
+  "keywords": [],
+  "author": "jean",
+  "license": "ISC",
+  "devDependencies": {
+    "@faker-js/faker": "^8.0.2",
+    "@playwright/test": "^1.36.2",
+    "dotenv": "^16.3.1",
+    "playwright-qase-reporter": "^1.2.0-alpha.5"
+  }
+}
