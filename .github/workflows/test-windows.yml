@@ -1,4 +1,4 @@
-name: test_ubuntu
+name: test_windows
 on: [workflow_dispatch]
 
 jobs:
