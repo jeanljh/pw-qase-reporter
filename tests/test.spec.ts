@@ -13,4 +13,5 @@ test(qase(1, 'test - signup'), async ({ page }) => {
   await page.getByTestId('confirm-password').fill(password);
   await page.getByTestId('submit').click();
   await expect(page).toHaveURL('/todo');
+  await page.waitForTimeout(1000);
 });
