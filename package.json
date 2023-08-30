@@ -12,8 +12,8 @@
   "license": "ISC",
   "devDependencies": {
     "@faker-js/faker": "^8.0.2",
-    "@playwright/test": "^1.36.2",
+    "@playwright/test": "^1.37.1",
     "dotenv": "^16.3.1",
-    "playwright-qase-reporter": "^1.2.0-alpha.5"
+    "playwright-qase-reporter": "^1.2.1"
   }
 }
