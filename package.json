@@ -11,7 +11,7 @@
   "author": "jean",
   "license": "ISC",
   "devDependencies": {
-    "@faker-js/faker": "^8.1.0",
+    "@faker-js/faker": "^8.2.0",
     "@playwright/test": "^1.38.1",
     "dotenv": "^16.3.1",
     "playwright-qase-reporter": "^1.2.1"
