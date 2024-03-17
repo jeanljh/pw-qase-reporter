@@ -1,9 +1,19 @@
 name: test_ubuntu
-on: [pull_request, workflow_dispatch]
-
+on:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      os_choice:
+        description: 'Select OS to run'
+        type: choice
+        required: true
+        default: ubuntu-latest
+        options:
+          - ubuntu-latest
+          - windows-latest
 jobs:
   test-ubuntu:
-    runs-on: ubuntu-latest
+    runs-on: ${{ github.event.inputs.os_choice }}
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/
