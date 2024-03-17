@@ -14,7 +14,7 @@ updates:
       prefix: "chore(gha)"
     pull-request-branch-name:
       separator: "-"
-
+  # Maintain dependencies for npm.
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
