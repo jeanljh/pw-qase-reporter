@@ -29,7 +29,9 @@ jobs:
         uses: ./.github/actions/
         with:
           QASE_TOKEN: ${{secrets.QASE_TOKEN}}
+          COMMAND: 'npm run test:whatsapp'
       - if: ${{ github.event.inputs.app_choice == 'teams' }}
         uses: ./.github/actions/
         with:
           QASE_TOKEN: ${{secrets.QASE_TOKEN2}}
+          COMMAND: 'npm run test:teams'
