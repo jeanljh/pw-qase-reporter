@@ -14,6 +14,7 @@ on:
 jobs:
   test-ubuntu:
     runs-on: ${{ github.event.inputs.os_choice }}
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event_name == 'push' }}
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/
