@@ -31,3 +31,6 @@ jobs:
               -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
               https://api.github.com/repos/${{ github.repository }}/actions/workflows/teams-test-windows/dispatches \
               -d '{"ref": "master"}'
+          else
+            echo "Invalid workflow choice"
+          fi
