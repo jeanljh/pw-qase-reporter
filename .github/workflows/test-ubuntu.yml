@@ -13,8 +13,7 @@ on:
           - windows-latest
 jobs:
   test-ubuntu:
-    runs-on: ${{ github.event.inputs.os_choice }}
-    if: ${{ github.event_name == 'workflow_dispatch' || github.event_name == 'push' }}
+    runs-on: ${{ github.event_name == 'push' && 'ubuntu-latest' || github.event.inputs.os_choice }}
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/
