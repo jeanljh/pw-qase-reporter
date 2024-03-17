@@ -4,6 +4,9 @@ inputs:
   QASE_TOKEN:
     description: qase.io token
     required: true
+  COMMAND:
+    description: "Command to run"
+    required: true
 
 runs:
   using: "composite"
