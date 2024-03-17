@@ -21,11 +21,11 @@ on:
           - windows-latest
 jobs:
   test-ubuntu:
-    runs-on: ${{ github.event_name == 'push' && 'ubuntu-latest' || github.event.inputs.os_choice }}
+    runs-on: ${{ github.event_name != 'workflow_dispatch' && 'ubuntu-latest' || github.event.inputs.os_choice }}
     steps:
       - name: checkout
         uses: actions/checkout@v4
-      - if: ${{ github.event.inputs.app_choice == 'whatsapp' }}
+      - if: ${{ github.event_name != 'workflow_dispatch' && 'ubuntu-latest' || github.event.inputs.app_choice == 'whatsapp' }}
         uses: ./.github/actions/
         with:
           QASE_TOKEN: ${{secrets.QASE_TOKEN}}
