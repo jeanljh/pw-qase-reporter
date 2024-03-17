@@ -20,9 +20,9 @@ runs:
       run: npx playwright install --with-deps
       shell: bash
     - name: Run your tests
-      run: "${{inputs.COMMAND}}"
+      run: ${{inputs.COMMAND}}
       env:
-        QASE_TOKEN: "${{inputs.QASE_TOKEN}}"
+        QASE_TOKEN: ${{inputs.QASE_TOKEN}}
         QASE_REPORT: "1"
         LOGGER_ENABLED: "true"
         HEADLESS_MODE: "true"
