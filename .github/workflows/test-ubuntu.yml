@@ -25,13 +25,11 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v4
-      - if: ${{ github.event_name != 'workflow_dispatch' && 'ubuntu-latest' || github.event.inputs.app_choice == 'whatsapp' }}
+      - if: ${{ github.event_name != 'workflow_dispatch' || github.event.inputs.app_choice == 'whatsapp' }}
         uses: ./.github/actions/
         with:
           QASE_TOKEN: ${{secrets.QASE_TOKEN}}
-      - run: echo "WHATSAPP"
       - if: ${{ github.event.inputs.app_choice == 'teams' }}
         uses: ./.github/actions/
         with:
           QASE_TOKEN: ${{secrets.QASE_TOKEN2}}
-      - run: echo "TEAMS"
