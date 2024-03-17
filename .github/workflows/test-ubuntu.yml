@@ -3,6 +3,14 @@ on:
   push:
   workflow_dispatch:
     inputs:
+      app_choice:
+        description: 'Select app to run'
+        type: choice
+        required: true
+        default: whatsapp
+        options:
+          - whatsapp
+          - teams
       os_choice:
         description: 'Select OS to run'
         type: choice
@@ -15,7 +23,15 @@ jobs:
   test-ubuntu:
     runs-on: ${{ github.event_name == 'push' && 'ubuntu-latest' || github.event.inputs.os_choice }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: ./.github/actions/
+      - name: checkout
+        uses: actions/checkout@v4
+      - if: ${{ github.event.inputs.app_choice == 'whatsapp' }}
+        uses: ./.github/actions/
         with:
           QASE_TOKEN: ${{secrets.QASE_TOKEN}}
+      - run: echo "WHATSAPP"
+      - if: ${{ github.event.inputs.app_choice == 'teams' }}
+        uses: ./.github/actions/
+        with:
+          QASE_TOKEN: ${{secrets.QASE_TOKEN2}}
+      - run: echo "TEAMS"
