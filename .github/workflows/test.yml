@@ -1,9 +1,10 @@
 name: test
 on:
-  push:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
   workflow_dispatch:
     inputs:
-      os_tyoe:
+      os_type:
         description: Select OS to run
         type: choice
         required: true
@@ -13,7 +14,7 @@ on:
           - windows-latest
 jobs:
   playwright-test:
-    runs-on: ${{ github.event_name != 'workflow_dispatch' && 'ubuntu-latest' || github.event.inputs.os_choice }}
+    runs-on: ${{ github.event_name != 'workflow_dispatch' && 'ubuntu-latest' || github.event.inputs.os_type }}
     if: ${{ !github.event.pull_request.draft }}
     steps:
       - name: Checkout
