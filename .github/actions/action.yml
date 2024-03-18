@@ -1,15 +1,12 @@
-name: test
-description: "Run playwright test scripts for todo app"
+name: action
+description: Run playwright test scripts for todo app
 inputs:
   QASE_TOKEN:
     description: qase.io token
     required: true
-  COMMAND:
-    description: "Command to run"
-    required: true
 
 runs:
-  using: "composite"
+  using: composite
   steps:
     - name: Set up node
       uses: actions/setup-node@v4
@@ -19,13 +16,13 @@ runs:
     - name: Install Playwright
       run: npx playwright install --with-deps
       shell: bash
-    - name: Run your tests
-      run: ${{inputs.COMMAND}}
+    - name: Run Playwright tests
+      run: npm test
       env:
         QASE_TOKEN: ${{inputs.QASE_TOKEN}}
-        QASE_REPORT: "1"
-        LOGGER_ENABLED: "true"
-        HEADLESS_MODE: "true"
+        QASE_REPORT: '1'
+        LOGGER_ENABLED: 'true'
+        HEADLESS_MODE: 'true'
       shell: bash
     - name: Upload test results
       uses: actions/upload-artifact@v4

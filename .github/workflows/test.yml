@@ -1,0 +1,24 @@
+name: test
+on:
+  push:
+  workflow_dispatch:
+    inputs:
+      os_tyoe:
+        description: Select OS to run
+        type: choice
+        required: true
+        default: ubuntu-latest
+        options:
+          - ubuntu-latest
+          - windows-latest
+jobs:
+  playwright-test:
+    runs-on: ${{ github.event_name != 'workflow_dispatch' && 'ubuntu-latest' || github.event.inputs.os_choice }}
+    if: ${{ !github.event.pull_request.draft }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Run action workflow
+        uses: ./.github/actions/
+        with:
+          QASE_TOKEN: ${{secrets.QASE_TOKEN}}
