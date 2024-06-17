@@ -14,7 +14,7 @@
     "@faker-js/faker": "^8.4.1",
     "@playwright/test": "^1.44.1",
     "dotenv": "^16.4.5",
-    "playwright-qase-reporter": "^1.2.2"
+    "playwright-qase-reporter": "^2.0.4"
   },
   "overrides": {
     "axios": "^1.6.5"
