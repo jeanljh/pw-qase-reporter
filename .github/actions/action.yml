@@ -20,7 +20,6 @@ runs:
       run: npm test
       env:
         QASE_TOKEN: ${{inputs.QASE_TOKEN}}
-        QASE_REPORT: '1'
         LOGGER_ENABLED: 'true'
         HEADLESS_MODE: 'true'
       shell: bash

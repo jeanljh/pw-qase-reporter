@@ -27,12 +27,16 @@ export default defineConfig({
 		[
 			'playwright-qase-reporter',
 			{
-				apiToken: process.env.QASE_TOKEN,
-				projectCode: 'TODO',
-				runComplete: true,
-				basePath: 'https://api.qase.io/v1',
-				logging: true,
-				uploadAttachments: false,
+        mode: 'testops',
+        testops: {
+          api: {
+            token: process.env.QASE_TOKEN,
+          },
+          project: 'TODO',
+          run: {
+            complete: true,
+          },
+        },
 			},
 		],
 	],

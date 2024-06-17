@@ -1,8 +1,11 @@
 import { test, expect } from '@playwright/test';
-import { qase } from 'playwright-qase-reporter/dist/playwright';
+import { qase } from 'playwright-qase-reporter';
 import { faker } from '@faker-js/faker';
 
-test(qase(1, 'test - signup'), async ({ page }) => {
+test('signup', async ({ page }) => {
+  qase.id(1)
+  qase.title('signup')
+  qase.fields({ 'Priority': 'High', 'Automation status': 'Automated' });
   const password = faker.internet.password();
   await page.goto('');
   await page.getByRole('link', { name: 'Signup' }).click();
