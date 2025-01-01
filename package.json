@@ -14,7 +14,7 @@
     "@faker-js/faker": "^9.2.0",
     "@playwright/test": "^1.48.2",
     "@types/node": "^22.9.0",
-    "dotenv": "^16.4.5",
+    "dotenv": "^16.4.7",
     "playwright-qase-reporter": "^2.0.16"
   },
   "overrides": {
