@@ -15,7 +15,7 @@
     "@playwright/test": "^1.56.1",
     "@types/node": "^22.15.3",
     "dotenv": "^17.2.3",
-    "playwright-qase-reporter": "^2.1.0"
+    "playwright-qase-reporter": "^2.1.6"
   },
   "overrides": {
     "axios": "^1.6.5"
