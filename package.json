@@ -13,9 +13,9 @@
   "devDependencies": {
     "@faker-js/faker": "^10.2.0",
     "@playwright/test": "^1.61.1",
-    "@types/node": "^25.2.0",
+    "@types/node": "^26.1.0",
     "dotenv": "^17.2.3",
-    "playwright-qase-reporter": "^2.1.7"
+    "playwright-qase-reporter": "^2.5.7"
   },
   "overrides": {
     "axios": "^1.6.5"
